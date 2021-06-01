@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} blogHome {% endblock title%}
+{% block body %}
+<div class="container">
+<h2>Blogs of Indian Veganism <h2>
+<div class="row mx-3 my-4">
+ {% for post in allposts  %}
+
+ <div class="card mx-3 my-4 text-white text-center bg-dark" style="width: 24rem;">
+  <img src="/media/{{post.image}}" class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h4 class="card-title pt-5 mt-4 mb-4 display-7 lh-1">{{post.title}}</h4>
+    <a href="/blog/{{post.slug}}" class="stretched-link"></a>
+  </div>
+</div>
+ 
+{% endfor %}
+</div>
+</div>
+
+{% endblock body %}
